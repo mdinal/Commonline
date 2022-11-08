@@ -26,6 +26,7 @@ export class TrackingComponent implements OnInit {
   ngOnInit(): void {
   }
   search(e:any){
+    
     const modalRef = this.modalService.open(TimelineComponent,{ centered: true });
     console.log(this.trackingId);
   }
