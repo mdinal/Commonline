@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper">
+    <h1> Customer Name:{{details.customerName}}</h1>
+    <h1> Customer Address:{{details.customerAddress}}</h1>
+
+
+    <ul class="sessions" *ngFor="let item of arry">
+      <li>
+        <div class="time">{{item.updatedDate}}</div>
+        <p>{{item.stateName}} </p>
+      </li>
+    </ul>
+  </div>
+</div>

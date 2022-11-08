@@ -1,0 +1,114 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="heading mb-4">Let's talk about everything!</h3>
+        <p>Get in touch with our lovely team</p>
+        <p><img src="../../../assets/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+      </div>
+      <div class="col-md-6">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group m-5">
+            <input class="form-control" type="text" formControlName="name" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" placeholder="Your name">
+
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+              <div *ngIf="f['name'].errors['required']">Fullname is required</div>
+            </div>
+          </div>
+          <div class="form-group m-5">
+            <input class="form-control" type="text" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="Your email address">
+
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Vaild Email is required</div>
+            </div>
+          </div>
+          <div class="form-group m-5">
+            <input class="form-control" type="text" formControlName="phone" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" placeholder="your phone number">
+
+            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+              <div *ngIf="f['phone'].errors['required']">Vaild Phone is required</div>
+            </div>
+          </div>
+          <div class="form-group m-5">
+            <textarea rows="3" class="form-control" type="text" formControlName="msg" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['msg'].errors }" placeholder="your message"></textarea>
+
+            <div *ngIf="submitted && f['msg'].errors" class="invalid-feedback">
+              <div *ngIf="f['msg'].errors['required']"> message is required</div>
+            </div>
+          </div>
+          <div class="form-group form-check m-5">
+            <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
+              [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
+            <label for="acceptTerms" class="form-check-label">I have read and agree to the Terms</label>
+            <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+              Accept Terms is required
+            </div>
+          </div>
+
+          <div class="form-group m-5">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+              Reset
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        
+        <iframe class="w-100" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.667639580349!2d79.86047421477295!3d6.9302706949927595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2595dd59e0a5b%3A0xf52c4b8099c94393!2sCommonline%20Express%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1667633504842!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 m-1">
+            <h5 class="heading mb-4">Hotline</h5>
+            <p>011-7550023 | 011-4670069 | 011-4670070 | 011-4670070</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 m-1">
+            <h6 class="heading mb-2">Domestic Courier</h6>
+            <p>0771216705</p>
+          </div>
+          <div class="col-md-3 m-1">
+            <h6 class="heading mb-2">Customer Care (WhatsApp)</h6>
+            <p>0777285836</p>
+          </div>
+          <div class="col-md-3 m-1">
+            <h6 class="heading mb-2">Cargo</h6>
+            <p>0777284845</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 m-1">
+            <h5 class="heading mb-4">Local Info</h5>
+            <p>No 233, First Division, Maradana, Colombo 10 cuscareclxpress@gmail.com</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 m-1">
+            <h5 class="heading mb-4">Local International Cargo</h5>
+            <p>0777284845 || Cargo.clexpress@gmail.com</p>
+          </div>
+          <div class="col-md-4 m-1">
+            <h5 class="heading mb-4">Domestic Courier</h5>
+            <p>0771216705 || marketing.clexpress@gmail.com</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
