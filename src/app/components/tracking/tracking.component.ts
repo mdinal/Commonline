@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faCoffee, faLaptop,faUsers,faUserGraduate,faTrophy} from '@fortawesome/free-solid-svg-icons';
 import { NgbCarouselConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TimelineComponent } from '../timeline/timeline.component';
+
 @Component({ 
   selector: 'app-tracking',
   templateUrl: './tracking.component.html',
@@ -9,6 +10,8 @@ import { TimelineComponent } from '../timeline/timeline.component';
 })
 export class TrackingComponent implements OnInit {
   faCoffee = faCoffee;
+  items = ['Javascript', 'Typescript'];
+
   faLaptop = faLaptop;
   faUsers = faUsers;
   faUserGraduate = faUserGraduate;
@@ -20,8 +23,11 @@ export class TrackingComponent implements OnInit {
     config.pauseOnHover = true;
    }
    images = [
-    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/images/header.jpeg"},
-    {title: 'Second Slide', short: 'Second Slide Short', src: "../../../assets/about_image.png"},
+    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/bg/01.jpg"},
+    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/bg/02.jpg"},
+    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/bg/03.jpg"},
+    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/bg/04.jpg"},
+    {title: 'First Slide', short: 'First Slide Short', src: "../../../assets/bg/05.jpg"},
   ];
   ngOnInit(): void {
   }

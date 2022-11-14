@@ -1,8 +1,8 @@
 .navbar {
-  background-color: lightblue;
+  background-color: #04193a ;
   padding: 5px;
   font-family: "Poppins";
-  box-shadow:-9px 2px 5px lightblue
+  // box-shadow:-9px 2px 5px lightblue
 }
 
 .navbar-toggler {
@@ -14,7 +14,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #212f3c;
+  color: white;
   font-size: 16px;
   font-weight: 300;
 }
@@ -24,7 +24,8 @@
 }
 .logo {
   height: 80px;
-  padding-left: 50px;
+  padding: 5px;
+  padding-left: 80px;
 }
 .li:last-of-type {
     margin-left: auto;

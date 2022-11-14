@@ -1,37 +1,18 @@
 <header>
   <section class="up">
     <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let image of images">
-          <div class="wrapper">
-            <img [src]="image.src" alt="Random first slide">
-          </div>
-          <div class="homecontent">
-            <h1><span class="redtext"> COMMON</span><span class="bluetext">LINE</span></h1>
-            <br>
-            <h3>TRACK YOUR PARCEL</h3>
-            <div class="search mt-3">
-                <label>
-                    <input type="text" [(ngModel)]="trackingId" (keydown.enter)="search($event)" required>
-                    <ul>
-                      <li T>T</li>
-                      <li r>r</li>
-                      <li a>a</li>
-                      <li c>c</li>
-                      <li k>k</li>
-                      <li i>i</li>
-                      <li n>n</li>
-                      <li g>g</li>
-                      <li _>_</li>
-                      <li I>I</li>
-                      <li d>d</li>
-
-                    </ul>
-                  </label>
-            </div>
-            <!-- <a routerLink="class" class="btn" >Find Classes</a>&nbsp;
-            <a routerLink="login" class="btn bg-light">Log In</a> -->
+      <ng-template ngbSlide *ngFor="let image of images">
+        <div class="wrapper">
+          <img [src]="image.src" alt="Random first slide">
         </div>
-        </ng-template>
-      </ngb-carousel>
+        <div class="homecontent">
+          <h1><span class="redtext"> COMMON</span><span class="bluetext">LINE</span></h1>
+          <br>
+          <h3 class="whitetext">TRACK YOUR PARCEL</h3>
+          <app-search-box></app-search-box>
+        </div>
+      </ng-template>
+    </ngb-carousel>
   </section>
 </header><br><br>
+<app-content></app-content>

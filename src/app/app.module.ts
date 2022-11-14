@@ -14,6 +14,9 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TagInputModule } from 'ngx-chips';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { ContentComponent } from './components/content/content.component';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     ServicesComponent,
     ContactUsComponent,
     TrackingComponent,
-    TimelineComponent
+    TimelineComponent,
+    SearchBoxComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    TagInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

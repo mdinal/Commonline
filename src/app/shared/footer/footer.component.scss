@@ -1,5 +1,5 @@
 footer.nb-footer {
-  background: #222;
+  background: #04193a ;
   border-top: 4px solid var(--blue-primary);
 }
 footer.nb-footer .about {
@@ -10,7 +10,7 @@ footer.nb-footer .about {
 }
 footer.nb-footer .about p {
   font-size: 13px;
-  color: #999;
+  color: rgb(255, 255, 255);
   margin-top: 30px;
 }
 footer.nb-footer .about .social-media {
@@ -27,7 +27,7 @@ footer.nb-footer .about .social-media ul li a {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 footer.nb-footer .about .social-media ul li a:hover {
-  background: var(--blue-primary);
+  background: #9cc702 ;
   color: #05245d;
   border-color: var(--blue-primary);
 }
