@@ -1,31 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
-  <a class="#" routerLink=""><img class="logo" src="../assets/logo.png" alt=""></a>
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+  <div class="container"> <a class="#" routerLink=""><img class="logo" src="../assets/logo.png" alt=""></a>
+    <button class="navbar-toggler" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navcol-1"><span
+        class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navcol-1" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item" role="presentation">
+           <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" routerLink="services">Services</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" routerLink="about">About Us</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" routerLink="contact">Contact Us</a>
+        </li>
 
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse justify-content-center" [ngClass]="{ 'show': navbarOpen }">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="services">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="about">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="contact">Contact Us</a>
-      </li>
-      <li class="nav-item ms-5 ps-5">
-        <a class="nav-link" href="http://manager.clexpress.lk/"><button type="button" class="btn btn-primary">Login</button></a>
-      </li>
-    </ul>
+      </ul><span class="navbar-text actions"><a class="btn btn-light action-button" role="button" href="http://manager.clexpress.lk/"><i
+            class="fa fa-user-circle-o" aria-hidden="true"></i>
+          Log
+          In</a></span>
+    </div>
   </div>
 </nav>
-<div class="d-flex justify-content-end bg-black text-white px-5">
-  <a>+94 117 550 023:Hotline <i class="fa fa-phone"></i> info@clexpress.lk:Mail <i class="fa fa-envelope"></i></a>
-</div>

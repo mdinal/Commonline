@@ -1,4 +1,4 @@
-<div class="main-search-input-wrap">
+<!-- <div class="main-search-input-wrap">
 
 
   <div class="main-search-input fl-wrap">
@@ -6,8 +6,35 @@
       <input type="text" value="" placeholder="Tracking ID...">
     </div>
 
-    <button class="main-search-button">Search</button>
+    <button class="main-search-button" (click)="start()">Search</button>
   </div>
 
 
+</div> -->
+
+
+<div [formGroup]="form">
+  <div class="editor-tag" (click)="focusTagInput()">
+    <span class="tag-item" *ngFor="let tag of tags">
+      {{tag}}
+      <span class="remove-tag" (click)="removeTag(tag)">×</span>
+    </span>
+    <input placeholder="Order IDs" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)"
+      formControlName="tag">
+  </div>
+  <button class="btn btn-primary m-2" (click)="open(content)">Search</button>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label class="mb-3" for="dateOfBirth">Passcode</label>
+        <div class="input-group">
+          <input id="dateOfBirth" [(ngModel)]="passcode" name="passcode" class="form-control" placeholder="last 4 digit of phone number" name="dp" />
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-dark" (click)="start()">send</button>
+    </form>
+  </div>
+</ng-template>

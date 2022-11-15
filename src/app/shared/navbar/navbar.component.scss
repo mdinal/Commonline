@@ -5,13 +5,14 @@
   // box-shadow:-9px 2px 5px lightblue
 }
 
-.navbar-toggler {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-.custom-toggler .navbar-toggler-icon {
-  color: var(--blue-primary);
-}
+// .navbar-toggler {
+//   border-color: #ffffff;
+//   color: #ffffff;
+//   background: white;
+// }
+// .custom-toggler .navbar-toggler-icon {
+//   color: white;
+// }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
@@ -23,10 +24,16 @@
   color: var(--blue-primary);
 }
 .logo {
-  height: 80px;
+  height: 70px;
   padding: 5px;
-  padding-left: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+
 }
-.li:last-of-type {
-    margin-left: auto;
-  }
+.navbar-text{
+      margin-left: auto;
+
+}
+// .li:last-of-type {
+//     margin-left: auto;
+//   }

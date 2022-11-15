@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TrakingService } from 'src/app/service/traking.service';
 import { find, get, pull } from 'lodash';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -9,56 +10,29 @@ import { find, get, pull } from 'lodash';
 })
 export class TimelineComponent implements OnInit {
 
+  ids= [];
+  passcode:any;
   details:any;
   arry =[];
   @ViewChild('tagInput') tagInputRef!: ElementRef;
   tags: string[] = ['html', 'Angular'];
   form!: FormGroup ;
+  number:any;
+  @ViewChild('content', { static: false }) private content:any;
 
-  constructor(private trakingService:TrakingService,private fb: FormBuilder) { }
+  constructor(private trakingService:TrakingService,private fb: FormBuilder,private modalService: NgbModal) {
+   }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      tag: [undefined],
-    });
-    this.trakingService.getDetails().subscribe((data:any)=>{
+    this.ids.forEach((e)=>{
+      this.number =this.number+""+e+","
+    })
+    this.trakingService.getDetails(this.ids[0],this.passcode).subscribe((data:any)=>{
       this.details = data[0];
       this.arry =data[0].itemHistoryTracking;
       console.log(data)
+    },(err)=>{
+      this.modalService.dismissAll();
     })
   }
-  focusTagInput(): void {
-    this.tagInputRef.nativeElement.focus();
-  }
-
-  onKeyUp(event: KeyboardEvent): void {
-    const inputValue: string = this.form.controls['tag'].value;
-    if (event.code === 'Backspace' && !inputValue) {
-      this.removeTag();
-      return;
-    } else {
-      if (event.code === 'Comma' || event.code === 'Space') {
-        this.addTag(inputValue);
-        this.form.controls['tag'].setValue('');
-      }
-    }
-  }
-
-  addTag(tag: string): void {
-    if (tag[tag.length - 1] === ',' || tag[tag.length - 1] === ' ') {
-      tag = tag.slice(0, -1);
-    }
-    if (tag.length > 0 && !find(this.tags, tag)) {
-      this.tags.push(tag);
-    }
-  }
-
-  removeTag(tag?: string): void {
-    if (!!tag) {
-      pull(this.tags, tag);
-    } else {
-      this.tags.splice(-1);
-    }
-  }
-
 }
