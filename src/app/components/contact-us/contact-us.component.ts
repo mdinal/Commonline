@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmailService } from 'src/app/service/email.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,7 +14,7 @@ export class ContactUsComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private emailService:EmailService) {
     this.form = this.formBuilder.group(
       {
         name: ['', Validators.required],
@@ -36,8 +37,18 @@ export class ContactUsComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-
-    console.log(JSON.stringify(this.form.value, null, 2));
+    let body = {
+      "from":this.form.value.email,
+      "to":["info@clexpress.lk"],
+      "subject":"contact us from website",
+      "templateName":"templateName",
+      "modelJson":JSON.stringify(this.form.value)
+  };
+  console.log(body)
+  console.log(JSON.stringify(this.form.value))
+    this.emailService.sendMail(body).subscribe((data)=>{
+      this.form.reset();
+    })
   }
   onReset(): void {
     this.submitted = false;

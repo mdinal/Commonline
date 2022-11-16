@@ -27,6 +27,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.1.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "font-awesome-animation": "^1.1.1",
     "lodash": "^4.17.21",
     "ng-hashtag-search-box": "^0.0.1",
     "ng-image-slider": "^6.1.0",
